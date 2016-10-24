@@ -1,0 +1,156 @@
+body {
+	font-size: 24px;
+	min-width: 320px;
+	position: relative;
+	line-height: em(22px);
+	overflow-x: hidden;
+	font-family: "Lora", sans-serif;
+	color: $color-3;
+}
+
+a, a:hover, a:focus, a:active {
+	color: $color-1;
+	text-decoration: underline;	
+}
+
+.headers {
+	font-family: "Lora", $helvetica;
+	text-transform: uppercase;
+	font-weight: normal;
+	color: $color-2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@extend .headers;
+	line-height: em(22px);
+
+	h1 {
+		font-size: em(48px);		
+	}
+
+	h2 {
+		font-size: em(30px);
+	}
+
+	h3 {
+		font-size: em(24px);
+	}
+}
+
+.homesect {
+	padding-top: em(60px);
+	background-color: $bg-color-1;
+	position: relative;
+
+	&:before {
+			content: '';
+			width: 100%;
+			height: 6px;
+			position: absolute;
+			top: -6px;
+			background-image: url(/dist/assets/img/bah_1.png);
+			background-repeat: repeat-x;
+			z-index: 2;		
+		}
+
+	.section-head {
+		margin-bottom: em(80px);
+
+		h2{
+			text-align: center;
+			position: relative;
+			font-weight: 600;
+
+			&:after {
+				content: '';
+				width: em(165px);
+				height: 4px;
+				background-color: $color-1;
+				position: absolute;
+				display: block;
+				left: 50%;
+				bottom: -26px;		
+				transform: translate(-50%, 0);			
+			}
+
+			@include MQ(M) {
+				font-size: em(20px);
+			}
+		}
+
+		p {
+			margin-top: em(40px);
+			text-align: center;
+
+			@include MQ(M) {
+				font-size: em(14px);
+				text-align: left;
+			}
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+	}	
+}
+
+/* EXTENDS */
+
+.before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.ulli {
+	list-stile-type: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+	}
+}
+
+.transition {
+	transition: all 0.5s ease;
+}
+
+.button-wrap {
+	text-align: center;
+}
+
+.buttons {
+	display: inline-block;
+	border: none;
+	background-color: $color-1;
+	color: $color-5;
+	font-family: 'Raleway', $helvetica;
+	font-weight: 700;
+	font-size: em(22px);
+	padding: 8px 40px;
+	border-bottom: 3px solid #b67309;
+	transition: all 0.25s ease;
+	letter-spacing: 2px;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #f4a930;
+		text-decoration: none;
+		color: $color-5;
+	}
+
+	&:active {
+		background-color: #e6920c;
+		text-decoration: none;
+		color: $color-5
+	}
+
+	// a:focus {
+	// 	color: $color-5;
+	// 	text-decoration: none;
+	// }
+}

@@ -1,0 +1,59 @@
+/* breakpoints */
+
+// desktops
+
+$S:     320px;   
+$XS:    480px;   
+$M:     768px;     
+$L:     992px;     
+$XL:    1200px;
+
+
+// // mobils
+
+// $S-m:     320px;   
+// $XS-m:    480px;   
+// $M-m:     768px;     
+// $L-m:     992px;     
+// $XL-m:    1200px;
+
+
+// media queries desktop first
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (max-width: $S) { @content; } 
+  }
+  @else if $canvas == XS {
+   @media only screen and (max-width: $XS) { @content; } 
+  }
+  @else if $canvas == M {
+   @media only screen and (max-width: $M) { @content; } 
+  }
+  @else if $canvas == L {
+   @media only screen and (max-width: $L) { @content; } 
+  }
+  @else if $canvas == XL {
+   @media only screen and (max-width: $XL) { @content; } 
+  }
+}
+
+// // media queries mobile first
+
+// @mixin MQ($canvas-m) {
+// 	@if $canvas-m == S-m {
+// 		@media only screen and (min-width: $S-m) { @content; } 
+// 	}
+// 	@else if $canvas-m == XS-m {
+// 		@media only screen and (min-width: $XS-m) { @content; } 
+// 	}
+// 	@else if $canvas-m == M-m {
+// 		@media only screen and (min-width: $M-m) { @content; } 
+// 	}
+// 	@else if $canvas-m == L-m {
+// 		@media only screen and (min-width: $L-m) { @content; } 
+// 	}
+// 	@else if $canvas-m == XL-m {
+// 		@media only screen and (min-width: $XL-m) { @content; } 
+// 	}
+// }

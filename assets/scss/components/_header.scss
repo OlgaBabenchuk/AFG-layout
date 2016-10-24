@@ -1,0 +1,355 @@
+.main-head {
+	min-height: 620px;
+	background-size: cover;
+	background-position: center;
+	background-image: url(../img/header_bg.jpg);	
+	position: relative;
+	color: #fff;
+	padding-bottom: em(120px);
+
+	&::before {
+		@extend .before;
+		background-color: $color-2;
+		opacity: .85;
+	}
+
+	h1{
+		text-transform: none;
+	}	
+}
+
+
+/*-------TOP LINE -------*/
+
+.top-line {	
+	min-height: 160px;
+	display: flex;
+	align-items: center;
+	padding: 57px 0;
+	background-image: url(../img/top_gradient.png);
+	background-repeat: repeat-x;
+}
+
+.logo img {
+	width: 100px;
+	color: $color-4;
+	opacity: 0.9;
+
+	@include MQ(XS) {
+		width: 70px;
+	}	
+}
+
+.main-menu {
+	font-size: em(13px);
+	font-family: "Lora", $helvetica;
+	//display: flex;
+	justify-content: space-around;
+
+	.active a{
+			color: $color-1;
+			text-decoration: underline;
+		}
+
+	li {
+		line-height: em(48px);
+		padding: 0 9px;
+
+		a:hover {
+			color: $color-1;
+			text-decoration: underline;
+		}	
+	}
+
+	ul {
+		@extend .ulli;
+	}
+
+	a {		
+		color: $color-4;
+		text-decoration: none;		
+	}
+
+	@include MQ(XL) {
+		min-width: 290px;
+		display: none;
+		position: absolute;
+		right: em(15px);
+		z-index: 2;
+		margin-top: 50px;
+		float: right;		
+		text-align: right;
+		background-color: $color-5;
+	
+		ul li {
+			display: block;
+			line-height: 0;
+			padding: 0;
+			border-bottom: 1px solid $color-3;
+	
+			a {
+				display: block;
+				font-size: em(15px);
+				text-transform: uppercase;
+				line-height: em(48px);
+				padding: 0 20px;
+				background-color: transparent;
+				transition: all 0.5s ease;	
+			
+				&:hover {
+					background-color: $color-2;					
+				}
+			}
+		}		
+	}	
+}
+
+// @media only screen and (min-width: 1200px) {
+// 	.main-menu {
+// 		display: block;!important
+// 	}
+// }
+
+.phone-wrap {
+	position: relative;
+
+	.phone {
+		color: $color-4;
+		opacity: 0.9;
+		font-family: "Roboto", $helvetica;
+		font-size: em(12px);
+		font-weight: 700;
+		line-height: em(48px);
+		display: inline-block;
+		white-space: nowrap;
+
+		@include MQ(XL) {
+			padding-right: 48px;
+			line-height: em(32px);
+			text-align: center;
+		}
+
+		@include MQ(M) {
+			padding-right: 35px;
+			padding-left: 20px;
+		}
+
+		@include MQ(XS) {
+			font-size: em(12px);
+			padding-right: 45px;
+			padding-left: 10px;	
+		}
+	}
+
+	.toggle-menu {
+		width: 35px;
+		height: 35px;		
+		text-align: center;		
+		display: block;
+		padding: 18px 0 0 0;
+		float: right;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		@include MQ(XS) {
+			width: 30px;
+			height: 25px;		
+		}
+	}
+
+	.toggle-menu span:after,
+	.toggle-menu span:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: -9px;
+	}
+
+	.toggle-menu span:after{
+		top: 9px;
+	}
+
+	.toggle-menu span {
+		position: relative;
+		display: block;
+	}
+
+	.toggle-menu span,
+	.toggle-menu span:after,
+	.toggle-menu span:before {
+		width: 100%;
+		height: 2px;
+		background-color: $color-4;
+		transition: all 0.3s;
+		backface-visibility: hidden;
+		border-radius: 3px;
+	}
+
+	.toggle-menu.on span {
+		background-color: transparent;
+	}
+
+	.toggle-menu.on span:before {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.toggle-menu.on span:after {
+		transform: rotate(-45deg) translate(7px, -8px);
+	}
+
+	.toggle-menu.on {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@include MQ(XS) {
+		line-height: 32px;
+	}
+}
+
+
+/*------- TITLE AREA -------*/
+
+.header-wrap {
+	margin-top: em(40px);
+
+	h1 {
+		//margin-top: em(20px);
+		color: $color-4;
+		border-bottom: 8px solid $color-1;
+		display: inline-block;
+		padding-bottom: 20px;
+	}
+
+	ul {
+		@extend .ulli;
+		margin-top: em(20px);
+
+		li {
+			display: block;
+			font-family: 'Raleway', $helvetica;
+			font-weight: 600;
+			font-size: em(18px);
+			margin-bottom: em(12px);
+			position: relative;
+			padding-left: em(16px);
+
+			&::before {
+				content: '';
+				@include triangle(17px, $color-1, right);				
+				width: 15px;
+				height: 15px;
+				display: block;				
+				position: absolute;
+				top: em(5px);
+				left: 0;
+			}
+
+			@include MQ(L) {
+				font-size: em(14px);
+				margin-bottom: em(8px);
+			}
+		}
+
+		a {
+			color: $color-4;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	@include MQ(L) {
+		margin-top: 0;
+	}
+}
+
+.header-left {
+	margin-bottom: em(40px);
+}
+
+
+/*------- FORM AREA -------*/
+
+.forms {
+	font-size: em(11px);
+	padding: 25px 35px 35px;
+	background-color: transparentize($color-2, .2);
+	color: $color-6;
+	opacity: 0.8;
+	border-bottom: 3px solid $color-5;
+
+	h4 	{
+		font-family: "Roboto", $helvetica;
+		font-size: em(33px);
+		color: $color-4;
+		text-transform: none;
+		margin: 0;
+	}
+
+	p{
+		margin-top: em(20px);
+		line-height: em(23px);
+	}
+
+	label {
+		margin-top: em(16px);
+		margin-bottom: em(20px);
+		display: block;
+
+		span {
+			letter-spacing: 1.5px;
+			display: block;
+			margin-bottom: 0px;
+			color: #6b7e91;
+		}
+	}
+
+	input {
+		width: 100%;
+		display: block;
+		border: none;
+		box-shadow: 0 -3px $color-5;
+		background-color: $color-7;
+		text-indent: em(15px);
+		padding: 5px 0;
+		transition: all 0.5s ease;
+		color: $color-4;
+		font-family: 'Raleway', $helvetica;
+		font-size: em(18px);
+
+		&:focus {		
+			background-color: #627f99;	
+		}
+	}
+
+	button {
+		@extend .buttons;
+		margin-top: em(8px);	
+	}
+} 
+
+.arrow-wrap {
+	@extend .button-wrap;
+	position: relative;
+	z-index: 2;
+	top: em(50px);
+}
+
+.arrow-bottom {
+	display: inline-block;
+	width: 	em(30px);
+	height: em(30px);
+	background-repeat: no-repeat;
+	background-image: url(/dist/assets/img/arrow_down.png);
+	cursor: pointer;
+	opacity: 0.6;
+	transition: all .5s ease;
+
+	&:hover {
+		opacity: 1
+	}	
+}
