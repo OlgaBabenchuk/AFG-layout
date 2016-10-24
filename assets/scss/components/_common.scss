@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 	.section-head {
-		margin-bottom: em(80px);
+		margin-bottom: em(50px);
 
 		h2{
 			text-align: center;
@@ -74,7 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 			}
 
 			@include MQ(M) {
-				font-size: em(20px);
+				font-size: em(18px);
+			}
+
+			@include MQ(S) {
+				font-size: em(15px);
 			}
 		}
 
@@ -83,15 +87,24 @@ h1, h2, h3, h4, h5, h6 {
 			text-align: center;
 
 			@include MQ(M) {
-				font-size: em(14px);
+				font-size: em(13px);
 				text-align: left;
+				margin-bottom: em(20px);
 			}
 		}
 
 		a:hover {
 			text-decoration: none;
 		}
-	}	
+
+		@include MQ(M) {
+			margin-bottom: em(10px);
+		}
+	}
+
+	@include MQ(M) {
+		padding-top: em(10px);
+	}
 }
 
 /* EXTENDS */

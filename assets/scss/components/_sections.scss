@@ -1,8 +1,148 @@
-.section-bottom {
-	margin-top: em(20px);
-	background-color: #ccc;
+.section-content {
+	//min-height: em(400px);
+	background-image: url(/dist/assets/img/s1_gray_bg.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	position: relative;
+	padding-bottom: em(70px);
+
+	.s1__bottom-triangle {
+		height: em(70px);
+		width: 100%;
+		background-image: url(/dist/assets/img/s1_triangle.svg);
+		background-position: top;
+		background-size: 100% 100%;
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		text-align: center;
+
+		.triangle-logo {
+			width: em(100px);
+			margin-top: em(15px);						
+		}
+		
+		.scales {
+			width: em(120px);
+			position: absolute;
+			top: -195px;
+			left: 50%;
+			transform: translate(-50%, 0)		
+		}
+
+		@include MQ(M) {
+			background-size: cover;
+		}
+	}	
+}
+
+.info-item {
+	padding-left: em(34px);
+	max-width: em(215px);
+	line-height: em(18px);
+	margin: 50px 0;	
+
+	h4{
+		margin-top: 0;
+		line-height: em(24px);
+		a {
+			font-size: em(23px);
+			font-weight: 500;
+			text-decoration: none;
+			text-transform: none;		
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		@include MQ(M) {
+			font-size: em(10px);
+			text-decoration: underline;
+		}
+
+		@include MQ(S) {
+			font-size: em(9px);
+			text-decoration: underline;
+		}
+	}
+
+	p {
+		font-size: em(12px);
+		border-bottom: 1px solid $bg-color-3;
+		padding-bottom: em(20px);
+			
+		@include MQ(M) {
+			font-size: em(12px);
+			border-bottom: none;
+		}
+
+		@include MQ(S) {
+			font-size: em(11px);			
+		}
+	}
+
+	@include MQ(M) {
+		max-width: 100%;
+		margin-top: 30px;
+		margin-bottom: 20px;
+		padding-left: em(7px);
+		border-bottom: 1px solid $bg-color-3;
+	}
+}
+
+
+
+.info-item__med {
+	margin-top: -55px;
+
+	@include MQ(M) {
+		margin-top: 0;		
+	}
+}
+
+.s1-bottom {
+	padding: 15px 0 65px 0;
+	background-color: $bg-color-2;
+
+	.info-item {
+		margin: 15px 0 0 0;
+
+		p {
+			color: $color-4;
+			border-bottom: 1px solid $color-7;
+			padding-bottom: em(20px);
+			
+			@include MQ(M) {			
+				border-bottom: none;
+			}
+		}
+
+		@include MQ(M) {		
+			border-bottom: 1px solid $color-7;
+		}
+	}
+}
+
+.info-item__bottom {
+	margin-top: 55px;
+
+	@include MQ(M) {
+		margin-top: 0;		
+	}
+}
+
+.section-button {
+	background-color: $color-2;
 	padding: 52px 0;
 	text-align: center;
+	font-size: em(12px);
 
-	.buttons {}
+	@include MQ(M) {
+		font-size: em(10px);		
+	}
+
+	@include MQ(S) {
+		font-size: em(7px);		
+	}
 }
