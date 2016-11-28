@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 			position: relative;
 			font-weight: 600;
 
-			&:after {
+			&:after {					// orange line under title
 				content: '';
 				width: em(165px);
 				height: 4px;
@@ -79,6 +79,15 @@ h1, h2, h3, h4, h5, h6 {
 
 			@include MQ(S) {
 				font-size: em(15px);
+			}
+		}
+
+		h3 {
+			text-align: center;
+			margin-top: em(50px);
+
+			@include MQ(M) {
+				margin-top: em(12px);		
 			}
 		}
 
@@ -107,9 +116,130 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-/* EXTENDS */
 
-.before {
+.dark-section {					// common dark blue section
+	background-color: $color-2;
+
+	&:before {
+		background-image: url(/dist/assets/img/bah_2.png);		
+	}
+
+	.section-head {
+		margin-bottom: em(28px);
+
+		h2{
+			color: $color-4;
+		}
+
+		p {
+		color: $bg-color-1;
+		}
+	}
+
+	.section-button {
+		margin-top: em(15px);
+		background-color: $bg-color-2;
+	}	
+}
+
+
+.rgey-section {					// common dark blue section
+	background-color: $bg-color-4;
+	&:before {
+		background-image: url(/dist/assets/img/bah_3.png);
+		
+	}
+}
+
+.section-badding-b{				// section to make padding
+	padding-bottom: em(70px);
+
+	@include MQ(M) {
+		display: none;
+	}
+}
+
+.cards {						// section to make card blocks
+	text-align: center;
+	perspective: 600px;
+
+	.card {		
+		width: em(250px);
+		display: inline-block;
+		background-color: $color-2;
+		border-bottom: 6px solid $color-5;
+		margin: 0 12px;
+		color: $color-6;
+		font-size: em(14px);
+		line-height: em(22px);
+		padding: 54px 28px 52px 28px;
+		transition: all 1s ease;
+
+		&-on {
+			opacity: 1;
+		}
+
+		&-off {			
+			transform: rotateY(100deg);
+			opacity: 0;						
+		}			
+
+		h4 {
+			color: $bg-color-4;
+			font-family: "Raleway", $helvetica;
+			font-weight: 600;
+			margin: em(30px) 0 em(20px) 0;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		@include MQ(XL) {
+			width: em(250px);
+			margin: 0 12px;
+			font-size: em(12px);		
+			padding: 40px 15px 45px 15px;		
+		}
+
+		@include MQ(L) {
+			width: em(200px);
+			margin: 0 8px;
+			font-size: em(12px);		
+			padding: 40px 10px 45px 10px;		
+		}
+
+		@include MQ(M) {
+			width: em(250px);
+			display: block;				
+			font-size: em(14px);
+			line-height: em(22px);
+			padding: 54px 28px 52px 28px;
+			margin: 15px auto;		
+		}
+
+		@include MQ(S) {
+			width: em(220px);						
+			font-size: em(14px);
+			line-height: em(20px);
+			padding: 40px 28px 35px 28px;
+			margin: 10px auto;		
+		}
+	}	
+}
+
+.triangles-container {					
+	color: $color-4;
+	font-family: "Lora", sans-serif;
+	font-size: em(16px);
+	margin: em(40px) 0 em(10px) 0;
+	text-align: center;
+}
+
+
+/* ------------ EXTENDS -------------*/
+
+.before {					// common for before
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -118,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;
 }
 
-.ulli {
+.ulli {						// common styles for ul+li
 	list-stile-type: none;
 	margin: 0;
 	padding: 0;
@@ -160,10 +290,20 @@ h1, h2, h3, h4, h5, h6 {
 		background-color: #e6920c;
 		text-decoration: none;
 		color: $color-5
+	}	
+}
+
+.section-bottom__btn {
+	background-color: $bg-color-3;
+	padding: 52px 0;
+	text-align: center;
+	font-size: em(12px);
+
+	@include MQ(M) {
+		font-size: em(10px);		
 	}
 
-	// a:focus {
-	// 	color: $color-5;
-	// 	text-decoration: none;
-	// }
+	@include MQ(S) {
+		font-size: em(7px);		
+	}
 }
