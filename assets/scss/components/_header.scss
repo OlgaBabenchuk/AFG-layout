@@ -104,12 +104,6 @@
 	}	
 }
 
-// @media only screen and (min-width: 1200px) {
-// 	.main-menu {
-// 		display: block;!important
-// 	}
-// }
-
 .phone-wrap {
 	position: relative;
 
@@ -344,7 +338,7 @@
 	width: 	em(30px);
 	height: em(30px);
 	background-repeat: no-repeat;
-	background-image: url(/dist/assets/img/arrow_down.png);
+	background-image: url(../img/arrow_down.png);
 	cursor: pointer;
 	opacity: 0.6;
 	transition: all .5s ease;

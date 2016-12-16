@@ -6,7 +6,7 @@ $(document).ready(function() {
 		$(".main-menu").slideToggle();
 	});
 
-	//---turn cads---//
+	//---turn cards---//
 	$(".section-4").waypoint(function() {
 
 		$(".section-4 .card").each(function(index) {

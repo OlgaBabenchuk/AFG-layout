@@ -1,11 +1,10 @@
 /*------------------------------
-			SECTION 1			
+|		CONTENT SECTION			|
 -------------------------------*/
 
 
 .section-content {
-	//min-height: em(400px);
-	background-image: url(/dist/assets/img/s1_gray_bg.png);
+	background-image: url(../img/s1_gray_bg.png);
 	background-repeat: no-repeat;
 	background-position: bottom;
 	position: relative;
@@ -14,7 +13,7 @@
 	.s1__bottom-triangle {
 		height: em(70px);
 		width: 100%;
-		background-image: url(/dist/assets/img/s1_triangle.svg);
+		background-image: url(../img/s1_triangle.svg);
 		background-position: top;
 		background-size: 100% 100%;
 		position: absolute;
@@ -309,7 +308,7 @@
 
 	.section-content {
 		min-height: em(400px);
-		background-image: url(/dist/assets/img/s3_sun_bg.png);
+		background-image: url(../img/s3_sun_bg.png);
 		background-position: center;
 		padding-bottom: 0;
 		padding-top: em(30px);
@@ -484,6 +483,10 @@
 
 	&:first-child .tc-item__content {
 		margin-left: 35px;
+
+		@include MQ(M) {
+			margin-left: 16px;
+		}
 	}
 
 	.tc-item__content {
@@ -499,12 +502,31 @@
 			float: left;
 			margin-right: 10px;
 		}
+
+		@include MQ(M) {
+			margin-top: none;
+			margin-left: 16px;
+			left: 47%;
+			top: 20%;
+		}
+
+		@include MQ(XS) {
+			left: 30%;
+		}
 	}
 
 	svg {
 		position: absolute;
 		top: 0;
 		left: 0;
+
+		@include MQ(M) {
+			left: 35%;
+		}
+
+		@include MQ(XS) {
+			left: 20%;
+		}
 	}
 
 	@include MQ(L) {
@@ -512,7 +534,8 @@
 	}
 
 	@include MQ(M) {
-		display: block;	
+		display: block;
+		margin-left: 0;
 	}
 }
 
@@ -587,4 +610,30 @@
 	height: em(116px);
 	border-radius: 50%;
 	border: 5px solid $color-1;
+}
+
+
+/*------------------------------
+			MAP SECTION		
+-------------------------------*/
+
+.map-section iframe {
+	width: 100vw;
+	height: em(200px);
+}
+
+
+/*------------------------------
+			FOOTER SECTION		
+-------------------------------*/
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: em(60px);
+	background-color: $bg-color-2;
+	color: $color-4;
+	font-size: em(10px);
 }
